@@ -265,6 +265,35 @@ class LoginController extends Controller
         if (strlen($uid) > 64) {
             $uid = $provider.'-'.md5($profileId);
         }
+        if ($provider == 'yandex') {
+            $uid = str_replace('@', '_', $profile->emailVerified);
+            $profile->displayName = $profile->firstName;
+            $profile->email = $profile->emailVerified;
+        }
+        
+        // throw new LoginException($provider);
+        $providers = json_decode($this->config->getAppValue($this->appName, 'oauth_providers', '[]'), true);
+        foreach ($providers as $name => $prov) {
+            if ($name === $provider) {
+                if (isset($prov['auth_params']) && is_array($prov['auth_params']) && isset($prov['auth_params']['hd'])) {
+                    $domains = $prov['auth_params']['hd'];
+                    if (! empty($domains)) {
+                        $found = false;
+                        foreach (explode(',', $domains) as $domain) {
+                            $domain = trim($domain);
+                            if (strpos($profile->email, $domain) > 0) {
+                                $found = true;
+                            }
+                        }
+                        if (! $found) {
+                            throw new LoginException($this->l->t('Can not login with specified domain'));
+                        }
+                    }
+                }
+                break;
+            }
+        }
+        
         return $this->login($uid, $profile);
     }
 

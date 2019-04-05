@@ -19,6 +19,10 @@ a[href*="/sociallogin/oauth/facebook"]::before {
 a[href*="/sociallogin/oauth/google"]::before {
   background-image: url(../img/google.svg);
 }
+a[href*="/sociallogin/oauth/yandex"]::before {
+  background-image: url(../img/yandex.png);
+  background-size: 16px 16px;
+}
 a[href*="/sociallogin/oauth/amazon"]::before {
   background-image: url(../img/amazon.svg);
 }

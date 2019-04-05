@@ -174,10 +174,17 @@ $providersData = [
                         <input type="text" name="providers[<?php p($name) ?>][auth_params][hd]" value="<?php p(isset($provider['auth_params']['hd']) ? $provider['auth_params']['hd'] : '') ?>"/>
                     </label>
                 <?php endif ?>
+                <?php if ($name === 'yandex'): ?>
+                    <br/>
+                    <label>
+                        <?php p($l->t('Allow login only from specified domain')) ?><br>
+                        <input type="text" name="providers[<?php p($name) ?>][auth_params][hd]" value="<?php p(isset($provider['auth_params']['hd']) ? $provider['auth_params']['hd'] : '') ?>"/>
+                    </label>
+                <?php endif ?>
             </div>
         <?php endforeach ?>
         <br/>
-        <div class="provider-settings">
+        <!--div class="provider-settings">
             <h2 class="provider-title"><img src="<?php print_unescaped(image_path('sociallogin', 'telegram.svg')); ?>" /> Telegram</h2>
             <label>
                 <?php p($l->t('Bot login')) ?><br>
@@ -188,7 +195,7 @@ $providersData = [
                 <?php p($l->t('Token')) ?><br>
                 <input type="password" name="tg_token" value="<?php p($_['tg_token']) ?>"/>
             </label>
-        </div>
+        </div-->
         <br/>
 
         <?php foreach ($providersData as $provType => $provData): ?>
