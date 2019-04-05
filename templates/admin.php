@@ -125,8 +125,8 @@ $providersData = [
     ],
 ];
 ?>
-<div id="sociallogin" class="section">
-    <form id="sociallogin_settings" action="<?php print_unescaped($_['action_url']) ?>" method="post">
+<div id="yandexlogin" class="section">
+    <form id="yandexlogin_settings" action="<?php print_unescaped($_['action_url']) ?>" method="post">
 
         <p>
         <label for="new_user_group"><?php p($l->t('Default group that all new users belong')); ?></label>
@@ -142,7 +142,7 @@ $providersData = [
         </div>
         <div>
             <input id="allow_login_connect" type="checkbox" class="checkbox" name="allow_login_connect" value="1" <?php p($_['allow_login_connect'] ? 'checked' : '') ?>/>
-            <label for="allow_login_connect"><?php p($l->t('Allow users to connect social logins with their account')) ?></label>
+            <label for="allow_login_connect"><?php p($l->t('Allow users to connect Yandex logins with their account')) ?></label>
         </div>
         <div>
             <input id="prevent_create_email_exists" type="checkbox" class="checkbox" name="prevent_create_email_exists" value="1" <?php p($_['prevent_create_email_exists'] ? 'checked' : '') ?>/>
@@ -157,7 +157,7 @@ $providersData = [
         <hr/>
         <?php foreach ($_['providers'] as $name => $provider): ?>
             <div class="provider-settings">
-                <h2 class="provider-title"><img src="<?php print_unescaped(image_path('sociallogin', strtolower($name).'.svg')); ?>" />  <?php p(ucfirst($name))?></h2>
+                <h2 class="provider-title"><img src="<?php print_unescaped(image_path('yandexlogin', strtolower($name).'.svg')); ?>" />  <?php p(ucfirst($name))?></h2>
                 <label>
                     <?php p($l->t('App id')) ?><br>
                     <input type="text" name="providers[<?php p($name) ?>][appid]" value="<?php p($provider['appid']) ?>"/>
@@ -185,7 +185,7 @@ $providersData = [
         <?php endforeach ?>
         <br/>
         <!--div class="provider-settings">
-            <h2 class="provider-title"><img src="<?php print_unescaped(image_path('sociallogin', 'telegram.svg')); ?>" /> Telegram</h2>
+            <h2 class="provider-title"><img src="<?php print_unescaped(image_path('yandexlogin', 'telegram.svg')); ?>" /> Telegram</h2>
             <label>
                 <?php p($l->t('Bot login')) ?><br>
                 <input type="text" name="tg_bot" value="<?php p($_['tg_bot']) ?>"/>

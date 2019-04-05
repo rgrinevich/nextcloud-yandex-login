@@ -1,15 +1,15 @@
 jQuery(function ($) {
-  var appName = 'sociallogin';
+  var appName = 'yandexlogin';
   var showError = function(text) {
     OC.Notification.showTemporary('<div style="font-weight:bold;color:red">'+text+'<div>', {isHTML: true});
   };
-  $('#sociallogin_settings').submit(function (e) {
+  $('#yandexlogin_settings').submit(function (e) {
     e.preventDefault();
     $.post(this.action, $(this).serialize())
       .success(function (data) {
         if (data) {
           if (data.success) {
-            OC.Notification.showTemporary(t(appName, 'Settings for social login successfully saved'));
+            OC.Notification.showTemporary(t(appName, 'Settings for Yandex login successfully saved'));
           } else {
             showError(data.message);
           }

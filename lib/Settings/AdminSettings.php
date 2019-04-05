@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\SocialLogin\Settings;
+namespace OCA\YandexLogin\Settings;
 
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\Settings\ISettings;

@@ -1,5 +1,5 @@
 <?php
-namespace OCA\SocialLogin\Migration;
+namespace OCA\YandexLogin\Migration;
 
 use OCP\Migration\IOutput;
 use OCP\Migration\IRepairStep;
@@ -31,20 +31,20 @@ class SeparateProvidersNameAndTitle implements IRepairStep
         $this->setProvidersName('custom_oidc_providers');
 
         //Removes old user config "password"
-        $sql = "DELETE FROM `*PREFIX*preferences` WHERE `appid` = 'sociallogin' AND `configkey` = 'password'";
+        $sql = "DELETE FROM `*PREFIX*preferences` WHERE `appid` = 'yandexlogin' AND `configkey` = 'password'";
         $this->db->executeUpdate($sql);
     }
 
     private function setProvidersName($configKey)
     {
-        $providers = json_decode($this->config->getAppValue('sociallogin', $configKey), true);
+        $providers = json_decode($this->config->getAppValue('yandexlogin', $configKey), true);
         if (is_array($providers)) {
             foreach ($providers as &$provider) {
                 if (!isset($provider['name'])) {
                     $provider['name'] = $provider['title'];
                 }
             }
-            $this->config->setAppValue('sociallogin', $configKey, json_encode($providers));
+            $this->config->setAppValue('yandexlogin', $configKey, json_encode($providers));
         }
     }
 }

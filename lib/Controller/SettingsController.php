@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\SocialLogin\Controller;
+namespace OCA\YandexLogin\Controller;
 
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\JSONResponse;
@@ -12,7 +12,7 @@ use OCP\IConfig;
 use OCP\IURLGenerator;
 use OCP\IUserSession;
 use OCP\Util;
-use OCA\SocialLogin\Db\SocialConnectDAO;
+use OCA\YandexLogin\Db\SocialConnectDAO;
 
 class SettingsController extends Controller
 {
@@ -124,7 +124,7 @@ class SettingsController extends Controller
     /**
      * @NoAdminRequired
      */
-    public function disconnectSocialLogin($login)
+    public function disconnectYandexLogin($login)
     {
         $this->socialConnect->disconnectLogin($login);
         return new RedirectResponse($this->urlGenerator->linkToRoute('settings.PersonalSettings.index', ['section'=>'additional']));

@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\SocialLogin\Controller;
+namespace OCA\YandexLogin\Controller;
 
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\RedirectResponse;
@@ -14,10 +14,10 @@ use OCP\IAvatarManager;
 use OCP\IGroupManager;
 use OCP\ISession;
 use OC\User\LoginException;
-use OCA\SocialLogin\Storage\SessionStorage;
-use OCA\SocialLogin\Provider\CustomOAuth2;
-use OCA\SocialLogin\Provider\CustomOpenIDConnect;
-use OCA\SocialLogin\Db\SocialConnectDAO;
+use OCA\YandexLogin\Storage\SessionStorage;
+use OCA\YandexLogin\Provider\CustomOAuth2;
+use OCA\YandexLogin\Provider\CustomOpenIDConnect;
+use OCA\YandexLogin\Db\SocialConnectDAO;
 use Hybridauth\Provider;
 use Hybridauth\User\Profile;
 use Hybridauth\HttpClient\Curl;
@@ -306,7 +306,7 @@ class LoginController extends Controller
         }
         if ($this->userSession->isLoggedIn()) {
             if (!$this->config->getAppValue($this->appName, 'allow_login_connect')) {
-                throw new LoginException($this->l->t('Social login connect is disabled'));
+                throw new LoginException($this->l->t('Yandex login connect is disabled'));
             }
             if (null !== $user) {
                 throw new LoginException($this->l->t('This account already connected'));

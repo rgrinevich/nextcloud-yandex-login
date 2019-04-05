@@ -1,7 +1,7 @@
-#sociallogin_settings input {
+#yandexlogin_settings input {
   width: 285px;
 }
-#sociallogin_settings .provider-settings {
+#yandexlogin_settings .provider-settings {
   display: inline-block;
   vertical-align: top;
   margin-right: 15px;

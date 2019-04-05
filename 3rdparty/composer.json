@@ -1,6 +1,6 @@
 {
-	"name": "sociallogin/3rdparty",
-	"description": "3rdparty components for sociallogin",
+	"name": "yandexlogin/3rdparty",
+	"description": "3rdparty components for yandexlogin",
 	"config": {
 		"vendor-dir": ".",
 		"optimize-autoloader": true,

@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\SocialLogin\Provider;
+namespace OCA\YandexLogin\Provider;
 
 use Hybridauth\User;
 use Hybridauth\Data;

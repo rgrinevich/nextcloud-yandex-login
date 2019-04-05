@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\SocialLogin\Settings;
+namespace OCA\YandexLogin\Settings;
 
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\Settings\ISettings;
@@ -8,7 +8,7 @@ use OCP\IURLGenerator;
 use OCP\IUserSession;
 use OCP\IConfig;
 use OCP\Util;
-use OCA\SocialLogin\Db\SocialConnectDAO;
+use OCA\YandexLogin\Db\SocialConnectDAO;
 
 class PersonalSettings implements ISettings
 {
@@ -73,7 +73,7 @@ class PersonalSettings implements ISettings
 
             $connectedLogins = $this->socialConnect->getConnectedLogins($uid);
             foreach ($connectedLogins as $login) {
-                $params['connected_logins'][$login] = $this->urlGenerator->linkToRoute($this->appName.'.settings.disconnectSocialLogin', [
+                $params['connected_logins'][$login] = $this->urlGenerator->linkToRoute($this->appName.'.settings.disconnectYandexLogin', [
                     'login' => $login,
                     'requesttoken' => Util::callRegister(),
                 ]);

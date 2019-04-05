@@ -1,9 +1,9 @@
 jQuery(function ($) {
-  var appName = 'sociallogin';
+  var appName = 'yandexlogin';
   var showError = function(text) {
     OC.Notification.showTemporary('<div style="font-weight:bold;color:red">'+text+'<div>', {isHTML: true});
   }
-  $('#sociallogin_personal_settings').submit(function (e) {
+  $('#yandexlogin_personal_settings').submit(function (e) {
     e.preventDefault();
     var self = this;
     var saveSettings = function () {
@@ -25,7 +25,7 @@ jQuery(function ($) {
     }
     saveSettings();
   });
-  $('#sociallogin_personal_settings input').change(function () {
+  $('#yandexlogin_personal_settings input').change(function () {
     $(this.form).submit();
   })
 });

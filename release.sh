@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GITHUB_REPO=zorn-v/nextcloud-social-login
-APP_NAME=sociallogin
+APP_NAME=yandexlogin
 
 cd `dirname $0`
 

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-    <id>sociallogin</id>
-    <name>Social Login</name>
-    <summary>Social login via OAuth or OpenID</summary>
+    <id>yandexlogin</id>
+    <name>Yandex login</name>
+    <summary>Yandex login via OAuth2</summary>
     <description></description>
     <version>1.14.1</version>
     <licence>agpl</licence>
     <author>zorn-v</author>
-    <namespace>SocialLogin</namespace>
+    <namespace>YandexLogin</namespace>
     <category>integration</category>
     <category>social</category>
     <website>https://github.com/zorn-v/nextcloud-social-login</website>
@@ -19,13 +19,13 @@
         <nextcloud min-version="13" max-version="16" />
     </dependencies>
     <settings>
-    		<admin>OCA\SocialLogin\Settings\AdminSettings</admin>
-        <admin-section>OCA\SocialLogin\Settings\AdminSection</admin-section>
-        <personal>OCA\SocialLogin\Settings\PersonalSettings</personal>
+    		<admin>OCA\YandexLogin\Settings\AdminSettings</admin>
+        <admin-section>OCA\YandexLogin\Settings\AdminSection</admin-section>
+        <personal>OCA\YandexLogin\Settings\PersonalSettings</personal>
   	</settings>
     <repair-steps>
         <post-migration>
-            <step>OCA\SocialLogin\Migration\SeparateProvidersNameAndTitle</step>
+            <step>OCA\YandexLogin\Migration\SeparateProvidersNameAndTitle</step>
         </post-migration>
     </repair-steps>
 </info>

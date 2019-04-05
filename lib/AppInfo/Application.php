@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\SocialLogin\AppInfo;
+namespace OCA\YandexLogin\AppInfo;
 
 use OCP\AppFramework\App;
 use OCP\IURLGenerator;
@@ -10,11 +10,11 @@ use OCP\IUserSession;
 use OCP\IRequest;
 use OCP\ISession;
 use OCP\IUser;
-use OCA\SocialLogin\Db\SocialConnectDAO;
+use OCA\YandexLogin\Db\SocialConnectDAO;
 
 class Application extends App
 {
-    private $appName = 'sociallogin';
+    private $appName = 'yandexlogin';
 
     private $providersCount = 0;
 

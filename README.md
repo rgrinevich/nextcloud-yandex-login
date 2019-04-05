@@ -1,14 +1,14 @@
-# Social login
+# Yandex login
 
 Make possible create users and login via Telegram, OAuth or OpenID
 
-For OAuth you must create app for certain providers. Login button appear at login page if app id specified. Settings are in "Social login" section of settings page.
+For OAuth you must create app for certain providers. Login button appear at login page if app id specified. Settings are in "Yandex login" section of settings page.
 
 ## Telegram
 
 For using telegram login you need create bot and connect it to domain as described here https://core.telegram.org/widgets/login
 
-Then specify bot login and token in "Social login" section of admin settings page
+Then specify bot login and token in "Yandex login" section of admin settings page
 
 **Telegram auth will not work everywhere another than browser.***
 
@@ -29,7 +29,7 @@ Custom providers is on your own. Officially not supported
 
 ## Config
 
-You can use `'social_login_auto_redirect' => true` setting in `config.php` for auto redirect unauthorized users to social login if only one provider is configured.
+You can use `'social_login_auto_redirect' => true` setting in `config.php` for auto redirect unauthorized users to Yandex login if only one provider is configured.
 
 ## Hint
 
