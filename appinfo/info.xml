@@ -5,7 +5,7 @@
     <name>Yandex login</name>
     <summary>Yandex login via OAuth2</summary>
     <description></description>
-    <version>1.14.1</version>
+    <version>1.0.0</version>
     <licence>agpl</licence>
     <author>zorn-v</author>
     <namespace>YandexLogin</namespace>

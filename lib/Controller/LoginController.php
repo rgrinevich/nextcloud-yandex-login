@@ -266,7 +266,7 @@ class LoginController extends Controller
             $uid = $provider.'-'.md5($profileId);
         }
         if ($provider == 'yandex') {
-            $uid = str_replace('@', '_', $profile->emailVerified);
+            $uid = explode('@', $profile->emailVerified)[0];
             $profile->displayName = $profile->firstName;
             $profile->email = $profile->emailVerified;
         }
